@@ -38,7 +38,7 @@ class JS extends MinifyComponent
                     $toMinify = [];
 
                     foreach ($files as $file => $html) {
-                        if ($this->thisFileNeedMinify($file, $html)) {
+                        if ($this->thisFileNeedMinify($file, $html) && !stripos($html, 'ajax')) {
                             if ($this->view->concatJs) {
                                 $toMinify[$file] = $html;
                             } else {
